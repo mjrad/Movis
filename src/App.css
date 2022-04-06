@@ -1,0 +1,771 @@
+ html {
+     font-family: 'Roboto', sans-serif;
+ }
+ 
+ body {
+     margin: 0;
+     overflow: hidden;
+ }
+ /*spinner*/
+ 
+ .spinner {
+     display: inline-block;
+     text-align: center;
+ }
+ 
+ @keyframes bounce-delay {
+     0%,
+     80%,
+     100% {
+         transform: scale(0);
+     }
+     40% {
+         transform: scale(1.0);
+     }
+ }
+ 
+ .spinner .dot {
+     display: inline-block;
+     border-radius: 100%;
+     width: 12px;
+     height: 12px;
+     margin: 6px;
+     /* (width / 2) or (height / 2) */
+     background-color: #333;
+     animation: bounce-delay infinite 1.4s ease-in-out both;
+ }
+ 
+ .spinner .dot:nth-of-type(1) {
+     animation-delay: -0.32s;
+ }
+ 
+ .spinner .dot:nth-of-type(2) {
+     animation-delay: -0.16s;
+ }
+ /*Error*/
+ 
+ .error-container {
+     padding: 10px;
+     background-color: #ff7c7c;
+     color: #fff;
+ }
+ 
+ .navBar {
+     background-color: #333;
+     overflow: hidden;
+     margin-top: -15px;
+ }
+ /* Style the links inside the navigation bar */
+ 
+ .navBar a {
+     float: left;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 24px;
+ }
+ /* Change the color of links on hover */
+ 
+ .navBar a:hover {
+     background-color: #ddd;
+     color: black;
+ }
+ /* Add a color to the active/current link */
+ 
+ .navBar a.active {
+     background-color: lightseagreen;
+     color: white;
+ }
+ 
+ .navitemTitle a.active {
+     background-color: #111;
+     color: white;
+     font-weight: bold;
+ }
+ 
+ .navitemTitle a:hover {
+     background-color: #111;
+     color: white;
+     font-weight: bold;
+ }
+ 
+ .navitemTitle {
+     background-color: #111;
+     color: white;
+     font-weight: bold;
+ }
+ 
+ input,
+ textarea {
+     border: 1px solid #ababab;
+     padding: 5px;
+     font-size: 30px;
+ }
+ /* search */
+ 
+ .styles {
+     background-color: lavenderblush;
+     color: mediumvioletred;
+     margin: 0;
+ }
+ 
+ .cardContainer {
+     display: flex;
+     flex-direction: column;
+     list-style-type: none;
+ }
+ 
+ .submit {
+     display: flex;
+     flex-direction: column;
+     list-style-type: none;
+ }
+ 
+ .forecastContent {
+     background-color: white;
+ }
+ 
+ .rowCenter {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+ }
+ 
+ .mainContent {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     overflow-y: scroll;
+     height: 90vh;
+ }
+ 
+ .inputButton {
+     background-color: lightseagreen;
+     color: #fff;
+     border: 2px solid lightseagreen;
+     border-radius: 3px;
+     font-size: 30px;
+     font-weight: 300;
+     padding: 5px 10px;
+     margin-left: 5px;
+     cursor: pointer;
+ }
+ 
+ .forecastLabels {
+     display: flex;
+     flex-direction: row;
+     font-size: 20px;
+     font-weight: bolder;
+     color: #555555;
+ }
+ 
+ .dateLabel {
+     margin-left: 15px;
+     border-bottom: 1px solid #000
+ }
+ 
+ .descriptionLabel {
+     margin-left: 172px;
+     margin-right: 48px;
+     border-bottom: 1px solid #000
+ }
+ 
+ .dataLabels {
+     margin-right: 45px;
+     border-bottom: 1px solid #000
+ }
+ /* App */
+ 
+ .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #333;
+     color: white;
+     text-align: center;
+ }
+ 
+ .footerDiv {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     margin-top: -8px;
+     margin-bottom: -8px;
+ }
+ 
+ .footerLinks {
+     color: white;
+     text-decoration: none;
+     margin-right: 15px;
+     margin-left: 15px;
+ }
+ /*not found */
+ 
+ .notFound {
+     padding: 20px;
+ }
+ /* Genre Search */
+ 
+ .genreTitle {
+     display: flex;
+     margin-left: auto;
+     margin-right: auto;
+     justify-content: center;
+     width: 80vw;
+ }
+ 
+ .genreRow {
+     height: auto;
+     width: 80%;
+     margin-left: auto;
+     margin-right: auto;
+     padding-bottom: 130px;
+     display: grid;
+     grid-template-columns: repeat(3, 100%);
+     scroll-behavior: smooth;
+ }
+ 
+ .genreCard {
+     float: left;
+     background-color: #444;
+     border-radius: 16px;
+     width: 180px;
+     height: 280px;
+     margin-left: 10px;
+     margin-top: 10px;
+ }
+ 
+ .genreCardTitle {
+     color: #fff;
+     font-size: 20px;
+     text-align: center;
+     height: 80px;
+ }
+ 
+ .genreImage {
+     display: block;
+     width: 100px;
+     height: 120px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     border-radius: 10px;
+ }
+ 
+ .filterHolder {
+     width: 80%;
+     height: auto;
+     margin-left: auto;
+     margin-right: auto;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: left;
+ }
+ 
+ .genreButtonHolder {
+     width: auto;
+     height: 40px;
+     float: left;
+     margin-right: 10px;
+ }
+ 
+ .genreButton:active {
+     border: 2px solid lightseagreen;
+     border-radius: 30px;
+     background-color: lightseagreen;
+     color: #fff;
+ }
+ 
+ .genreButton {
+     width: auto;
+     height: auto;
+     border: 2px solid lightseagreen;
+     border-radius: 30px;
+     background-color: #fff;
+     font-size: 25px;
+ }
+ 
+ .genreSeachButton {
+     width: auto;
+     height: auto;
+     font-size: 40px;
+     border-radius: 10px;
+     background-color: lightseagreen;
+     border: 1px solid lightseagreen;
+     margin-left: 30px;
+ }
+ 
+ .noGenreResults {
+     width: 50%;
+     height: auto;
+     margin-top: 20px;
+     margin-left: auto;
+     margin-right: auto;
+     font-size: 25px;
+     text-align: center;
+     padding: 10px;
+     background-color: #ff7c7c;
+     color: #fff;
+     border-radius: 30px;
+ }
+ 
+ .genreLabelsHolder {
+     display: flex;
+     margin-left: auto;
+     margin-right: auto;
+     justify-content: center;
+     width: 80vw;
+ }
+ 
+ .genreLabels {
+     width: 100%;
+     height: auto;
+     background-color: lightseagreen;
+     border-radius: 30px;
+     text-align: center;
+     color: white;
+ }
+ 
+ .genreDisplay {
+     width: auto;
+     height: auto;
+     border: 2px solid lightseagreen;
+     border-radius: 30px;
+     background-color: white;
+     color: black;
+     font-size: 10px;
+     float: left;
+     padding-left: 10px;
+     padding-right: 10px;
+     margin-left: 20px;
+     margin-bottom: 10px;
+ }
+ /*movie */
+ 
+ .movieSpacing {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+ }
+ 
+ .movieCard {
+     width: 90vw;
+     background-color: #333;
+     padding: 20px;
+ }
+ 
+ .movieStatsDiv {
+     display: flex;
+     flex-direction: column;
+     justify-content: Start;
+     align-items: center;
+     padding: 15px;
+     width: 18vw;
+     color: #FBFAF5;
+     font-size: 20px;
+     background-color: slategray;
+     margin-left: 20px;
+     border-radius: 10px;
+     text-align: center;
+     height: 270px;
+ }
+ 
+ .movieTitle {
+     font-size: xx-large;
+ }
+ 
+ .movieStatsLabel {
+     text-decoration: underline;
+     text-underline-offset: 2px;
+     margin: 0;
+     padding-bottom: 90px;
+ }
+ 
+ .genresValue {
+     font-size: 25px;
+     margin: 0;
+     overflow-y: hidden;
+ }
+ 
+ .userScore {
+     font-size: 40px;
+     margin: 0;
+ }
+ 
+ .releaseDate {
+     font-size: 30px;
+     margin: 0;
+ }
+ 
+ .submit {
+     padding: 20px;
+ }
+ 
+ .titleWithCard {
+     margin-bottom: 40px;
+ }
+ 
+ .overviewCard {
+     display: flex;
+     flex-direction: column;
+     justify-content: Start;
+     align-items: center;
+     width: 100%;
+     background-color: rgb(83, 97, 109);
+     border-radius: 10px;
+     margin-left: 20px;
+     padding: 15px;
+     height: 270px;
+ }
+ 
+ .overviewTitle {
+     color: #FBFAF5;
+     font-size: 20px;
+     text-decoration: underline;
+     text-underline-offset: 2px;
+     margin: 0;
+ }
+ 
+ .overviewContent {
+     color: #FBFAF5;
+     font-size: 20px;
+     overflow: hidden;
+ }
+ 
+ .randomMoviesTitleDiv {
+     margin-top: 50px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     width: 100%;
+     height: min-content;
+     background-color: #ababab;
+     border-radius: 10px;
+ }
+ 
+ .randomMoviesTitle {
+     font-size: 40px;
+     margin: 10px;
+ }
+ 
+ .randomMovieDivider {
+     width: 80%;
+ }
+ /*actor */
+ 
+ .knownForInnerContainer {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+ }
+ 
+ .knownForOuterContainer {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     color: #ddd;
+     font-size: 20px;
+ }
+ 
+ .knownForCard {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 15px;
+     width: 200px;
+     text-align: center;
+     background-color: slategray;
+     height: 270px;
+     margin-left: 20px;
+     position: relative;
+     border-radius: 10px;
+ }
+ 
+ .knownForLink {
+     text-decoration: none;
+     color: #ddd;
+ }
+ 
+ .knownForCard:hover .imgOverlay {
+     opacity: 1;
+ }
+ 
+ .imgOverlay {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 100%;
+     width: 100%;
+     opacity: 0;
+     transition: .5s ease;
+     background-color: lightseagreen;
+     border-radius: 10px;
+ }
+ 
+ .text {
+     color: white;
+     font-size: 20px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     text-align: center;
+ }
+ 
+ .knowForLabel {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: #ddd;
+     font-size: 30px;
+     margin-left: 40px;
+     margin-right: 40px;
+ }
+ 
+ .vl {
+     border-left: 5px solid #ddd;
+     height: 300px;
+ }
+ /*
+  Trending
+*/
+ 
+ .trending {
+     background-color: lightgrey;
+ }
+ 
+ .trendingTitle {
+     color: white;
+     text-align: center;
+     background-color: grey;
+     padding: 15px;
+     text-align: left;
+ }
+ 
+ .trendingList {
+     padding: 15px;
+ }
+ 
+ .trendingCard {
+     text-align: left;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     padding: 15px;
+     border-radius: 50px;
+     background-color: grey;
+     padding: 30px;
+     margin-bottom: 20px;
+ }
+ 
+ .trendingLink {
+     text-decoration: none;
+     color: #ddd;
+ }
+ 
+ .trendingCard:hover {
+     background: lightseagreen;
+     opacity: 1;
+ }
+ 
+ .trendingCardTitle {
+     color: white;
+     text-align: right;
+ }
+ 
+ .trendingContainer {
+     border-radius: 25px;
+     background-color: lightseagreen;
+     padding: 15px;
+     margin-left: 25px;
+     height: max-content;
+ }
+ 
+ .trendingImage {
+     display: inline-flex;
+     width: 120px;
+     height: 150px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     border-radius: 10px;
+ }
+ /*
+  Trivia
+*/
+ 
+ .triviaContainer {
+     border-radius: 25px;
+     margin-left: 25px;
+ }
+ 
+ .trivia {
+     margin-left: 40px;
+     margin-right: 40px;
+     text-align: center;
+     border-radius: 25px;
+     background-color: lightseagreen;
+     padding: 15px;
+     margin-bottom: 20px;
+ }
+ 
+ .triviaTitle {
+     color: white;
+     text-align: center;
+     background-color: grey;
+     padding: 15px;
+ }
+ 
+ .triviaPhoto {
+     padding: 15px;
+ }
+ 
+ .triviaGuesses {
+     color: white;
+ }
+ /*
+  Upcoming
+*/
+ 
+ .upcoming {
+     background-color: lightgrey;
+ }
+ 
+ .upcomingTitle {
+     color: white;
+     text-align: center;
+     background-color: grey;
+     padding: 15px;
+     text-align: left;
+ }
+ 
+ .upcomingList {
+     padding: 15px;
+ }
+ 
+ .upcomingCard {
+     text-align: left;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     padding: 15px;
+     border-radius: 50px;
+     background-color: grey;
+     padding: 30px;
+     margin-bottom: 20px;
+ }
+ 
+ .upcomingLink {
+     text-decoration: none;
+     color: #ddd;
+ }
+ 
+ .upcomingCard:hover {
+     background: lightseagreen;
+     opacity: 1;
+ }
+ 
+ .upcomingCardTitle {
+     color: white;
+     text-align: right;
+ }
+ 
+ .upcomingContainer {
+     border-radius: 25px;
+     background-color: lightseagreen;
+     padding: 15px;
+     margin-left: 25px;
+     height: max-content;
+ }
+ 
+ .upcomingImage {
+     display: inline-flex;
+     width: 120px;
+     height: 150px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     border-radius: 10px;
+ }
+ /*
+  Top Rated
+*/
+ 
+ .topRated {
+     background-color: lightgrey;
+     margin-top: 15px;
+ }
+ 
+ .topRatedTitle {
+     color: white;
+     text-align: center;
+     background-color: grey;
+     padding: 15px;
+     text-align: left;
+ }
+ 
+ .topRatedList {
+     padding: 15px;
+ }
+ 
+ .topRatedCard {
+     text-align: left;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     padding: 15px;
+     border-radius: 50px;
+     background-color: grey;
+     padding: 30px;
+     margin-bottom: 20px;
+ }
+ 
+ .topRatedLink {
+     text-decoration: none;
+     color: #ddd;
+ }
+ 
+ .topRatedCard:hover {
+     background: lightseagreen;
+     opacity: 1;
+ }
+ 
+ .topRatedCardTitle {
+     color: white;
+     text-align: right;
+ }
+ 
+ .topRatedContainer {
+     border-radius: 25px;
+     background-color: lightseagreen;
+     padding: 15px;
+     margin-left: 25px;
+ }
+ 
+ .topRatedImg {
+     display: inline-flex;
+     width: 120px;
+     height: 150px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     border-radius: 10px;
+ }
+ /*
+  Home Page
+*/
+ 
+ .homePage {
+     display: flex;
+     overflow-y: scroll;
+     padding: 35px;
+     height: 80vh;
+ }
